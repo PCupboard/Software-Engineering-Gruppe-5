@@ -4,22 +4,7 @@ public class informationAboutRoute {
     private String name;
     private int distance;
 
-    public informationAboutRoute(int id, String name, int distance) {
-        this.id = id;
-        this.name = name;
-        this.distance = distance;
-    }
 
-    public final int getId() {
-        return id;
-    }
 
-    public final String getName() {
-        return name;
-    }
-
-    public int getDistance() {
-        return distance;
-    }
 
 }
