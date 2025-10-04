@@ -10,11 +10,11 @@ public class informationAboutRoute {
         this.distance = distance;
     }
 
-    public int getId() {
+    public final int getId() {
         return id;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
