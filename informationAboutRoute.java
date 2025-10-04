@@ -21,4 +21,5 @@ public class informationAboutRoute {
     public int getDistance() {
         return distance;
     }
+
 }
