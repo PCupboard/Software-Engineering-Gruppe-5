@@ -6,9 +6,9 @@ public class informationAboutRoute {
 
         private int id;
         private String name;
-        private int distance;
+        private float distance;
 
-        public informationAboutRoute(int id, String name, int distance) {
+        public informationAboutRoute(int id, String name, float distance) {
             this.id = id;
             this.name = name;
             this.distance = distance;
@@ -22,7 +22,7 @@ public class informationAboutRoute {
             return name;
         }
 
-        public int getDistance() {
+        public float getDistance() {
             return distance;
         }
 
