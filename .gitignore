@@ -1,1 +1,7 @@
-.vscode/settings.json
+﻿target/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.DS_Store
