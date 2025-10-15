@@ -1,4 +1,4 @@
-package no.hia.oblig4;
+package com.github.group5.public_transport_project;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.LinkedHashMap;
