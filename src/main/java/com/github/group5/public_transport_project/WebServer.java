@@ -1,5 +1,4 @@
-package com.github.group5;
-
+package com.github.group5.public_transport_project;
 import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
