@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f3c7bf5-d5e5-435a-8325-21d0bf6d71d9" name="Changes" comment="Laget en enkel klasse med potensielle informasjon om en rute.">
-      <change beforePath="$PROJECT_DIR$/.idea/Software-Engineering-Gruppe-5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Software-Engineering-Gruppe-5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/test/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +28,12 @@
     &quot;assignee&quot;: &quot;Erlind99&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/PCupboard/Software-Engineering-Gruppe-5.git",
-    "accountId": "091e7445-9c65-4eb3-bb98-b936aff26a05"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/PCupboard/Software-Engineering-Gruppe-5.git&quot;,
+    &quot;accountId&quot;: &quot;091e7445-9c65-4eb3-bb98-b936aff26a05&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -50,6 +48,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "user-setup",
     "kotlin-language-version-configured": "true",
