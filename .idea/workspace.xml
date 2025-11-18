@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f3c7bf5-d5e5-435a-8325-21d0bf6d71d9" name="Changes" comment=" en enkel klasse med potensielle informasjon om en rute.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
