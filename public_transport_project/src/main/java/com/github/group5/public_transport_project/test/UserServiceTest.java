@@ -10,33 +10,29 @@ public class UserServiceTest {
 
     private UserService service;
 
-    @BeforeEach
+    @BeforeEach //Opprett ny før hver test
     public void setUp() {
         service = new UserService();
     }
 
     @Test
-    public void testRegisterAndLogin() {
-// Registrering
+    public void testRegisterAndLogin() { //Registrering
         assertTrue(service.register("bilal", "riz", "bilal@mail.com"));
 
-// Login med korrekt passord
-        User user = service.login("bilal", "pwd");
+        User user = service.login("bilal", "riz"); //Loggin med riktig passord
         assertNotNull(user);
         assertEquals("bilal", user.getUsername());
 
-// Login med feil passord
-        assertNull(service.login("bilal", "feil"));
+        assertNull(service.login("bilal", "feil")); //Login med feil passord
 
-// Login med ukjent bruker
-        assertNull(service.login("ukjent", "passord"));
+        assertNull(service.login("ukjent", "passord")); //Ukjent bruker
     }
 
     @Test
     public void testDuplicateRegistration() {
         service.register("Usman", "Usman", "Usman@gmail.comw");
-// Registrering med samme brukernavn skal feile
-        assertFalse(service.register("Usman", "ny", "Usman@gmail.com"));
+
+        assertFalse(service.register("Usman", "ny", "Usman@gmail.com")); //Samme brukernavn feiler
     }
 }
 

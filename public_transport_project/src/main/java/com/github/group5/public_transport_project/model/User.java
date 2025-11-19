@@ -1,9 +1,9 @@
 package com.github.group5.public_transport_project.model;
 
 public class User {
-    private String username;
-    private String password;
-    private String email;
+    private String username; //Brukernavn
+    private String password; //Passord
+    private String email; //Email
 
     public User(String username, String password, String email) {
         this.username = username;
