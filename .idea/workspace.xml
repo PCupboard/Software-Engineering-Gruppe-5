@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2f3c7bf5-d5e5-435a-8325-21d0bf6d71d9" name="Changes" comment=" en enkel klasse med potensielle informasjon om en rute.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Software-Engineering-Gruppe-5/com/github/group5/public_transport_project/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software-Engineering-Gruppe-5/com/github/group5/public_transport_project/Service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software-Engineering-Gruppe-5/com/github/group5/public_transport_project/test/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software-Engineering-Gruppe-5/com/github/group5/public_transport_project/test/UserServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/test/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/test/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/public_transport_project/src/main/java/com/github/group5/public_transport_project/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.UserServiceTest.executor": "Run",
     "JUnit.UserServiceTest.testRegisterAndLogin.executor": "Debug",
@@ -73,7 +71,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UserServiceTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.group5.public_transport_project.Main" />
+      <module name="Software-Engineering-Gruppe-5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.group5.public_transport_project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Software-Engineering-Gruppe-5" />
       <extension name="coverage">
@@ -105,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.com.github.group5.public_transport_project.test in Software-Engineering-Gruppe-5" />
       </list>
