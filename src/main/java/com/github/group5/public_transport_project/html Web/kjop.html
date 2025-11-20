@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kjøp Billett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kjop.css" />
+</head>
+<body class="bg">
+  <header class="bar">
+    <span aria-hidden="true"></span>
+    <button id="langToggle" class="lang" type="button" aria-label="Bytt språk">NO</button>
+  </header>
+
+  <main class="wrap">
+    <h1 class="title"><span class="title-text">Kjøp Billett</span> 🎫</h1>
+
+    <section class="glass card">
+      <ul class="ticket">
+        <li class="row">
+          <span class="lbl" id="lbl-route">Velg Rute</span>
+          <span class="pill">33</span>
+        </li>
+
+        <li class="row counter" data-type="barn">
+          <span class="lbl" id="lbl-barn">Barn</span>
+          <div class="qty">
+            <button type="button" class="circle minus" aria-label="Færre barn">−</button> <!--For Minus/trekke fra antall-->
+            <span class="count">0</span>
+            <button type="button" class="circle plus" aria-label="Flere barn">+</button> <!--For pluss/legge til antall-->
+          </div>
+        </li>
+
+        <li class="row counter" data-type="voksen">
+          <span class="lbl" id="lbl-voksen">Voksen</span>
+          <div class="qty">
+            <button type="button" class="circle minus" aria-label="Færre voksne">−</button>
+            <span class="count">0</span>
+            <button type="button" class="circle plus" aria-label="Flere voksne">+</button>
+          </div>
+        </li>
+
+        <li class="row counter" data-type="honnor">
+          <span class="lbl" id="lbl-honnor">Honnør</span>
+          <div class="qty">
+            <button type="button" class="circle minus" aria-label="Færre honnør">−</button>
+            <span class="count">0</span>
+            <button type="button" class="circle plus" aria-label="Flere honnør">+</button>
+          </div>
+        </li>
+
+        <li class="row counter" data-type="student">
+          <span class="lbl" id="lbl-student">Student</span>
+          <div class="qty">
+            <button type="button" class="circle minus" aria-label="Færre studenter">−</button>
+            <span class="count">0</span>
+            <button type="button" class="circle plus" aria-label="Flere studenter">+</button>
+          </div>
+        </li>
+
+        <li class="row counter" data-type="militar">
+          <span class="lbl" id="lbl-militar">Militær</span>
+          <div class="qty">
+            <button type="button" class="circle minus" aria-label="Færre militær">−</button>
+            <span class="count">0</span>
+            <button type="button" class="circle plus" aria-label="Flere militær">+</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="bottom">
+        <a href="payment.html" class="btn primary" id="btn-buy">Kjøp Billett</a>
+      <!--<button type="button" class="btn primary" id="btn-buy">Kjøp Billett</button>-->
+    </section>
+  </main>
+
+  <script>
+    const langBtn = document.getElementById("langToggle");
+    const htmlEl  = document.documentElement;
+
+    const el = {
+      title: document.querySelector(".title-text"),
+      lblRoute: document.getElementById("lbl-route"),
+      lblBarn: document.getElementById("lbl-barn"),
+      lblVoksen: document.getElementById("lbl-voksen"),
+      lblHonnor: document.getElementById("lbl-honnor"),
+      lblStudent: document.getElementById("lbl-student"),
+      lblMilitar: document.getElementById("lbl-militar"),
+      btnBuy: document.getElementById("btn-buy")
+    };
+
+    const tr = {
+      NO: {
+        title: "Kjøp Billett",
+        route: "Velg Rute",
+        barn: "Barn",
+        voksen: "Voksen",
+        honnør: "Honnør",
+        student: "Student",
+        militær: "Militær",
+        buy: "Kjøp Billett"
+      },
+      EN: {
+        title: "Buy Ticket",
+        route: "Choose Route",
+        barn: "Child",
+        voksen: "Adult",
+        honnør: "Senior",
+        student: "Student",
+        militær: "Military",
+        buy: "Buy Ticket"
+      }
+    };
+
+    langBtn.addEventListener("click", () => {
+      const next = langBtn.textContent.trim() === "NO" ? "EN" : "NO"; 
+      const t = tr[next];
+      langBtn.textContent = next;
+      htmlEl.lang = next.toLowerCase();
+
+      el.title.textContent = t.title;
+      el.lblRoute.textContent = t.route;
+      el.lblBarn.textContent = t.barn;
+      el.lblVoksen.textContent = t.voksen;
+      el.lblHonnor.textContent = t.honnør;
+      el.lblStudent.textContent = t.student;
+      el.lblMilitar.textContent = t.militær;
+      el.btnBuy.textContent = t.buy;
+    });
+
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach(counter => {
+      const minus = counter.querySelector(".minus");
+      const plus  = counter.querySelector(".plus");
+      const numEl = counter.querySelector(".count");
+      let value = 0; 
+
+      minus.addEventListener("click", () => {
+        if (value > 0) { value--; numEl.textContent = value; }  // Ikke kan gå under 0 men minster ved bruk
+      });
+
+      plus.addEventListener("click", () => {
+        value++; numEl.textContent = value;  // Øker med 1 
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Betaling</title>
+  <link rel="stylesheet" href="payment.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg">
+  <header class="bar">
+    <span></span>
+    <button id="langToggle" class="lang">NO</button>
+  </header>
+
+  <main class="wrap">
+
+    <h1 class="title">Velg Betalingsmetode</h1>
+
+    <section class="methods">
+      <button class="btn method" data-method="apple"> Apple Pay</button>
+      <button class="btn method" data-method="bank">💳 Bankkort</button>
+      <button class="btn method" data-method="vipps">🟧 Vipps</button>
+    </section>
+
+    <p id="status" class="status"></p>
+
+  </main>
+
+  <!-- Fake betalings bekreftelse som sender deg til main.html etter 3 sekunder, det spiller ingen rolle om hvilken av de du trykker på-->
+  <script>
+    const buttons = document.querySelectorAll(".method");
+    const status = document.getElementById("status");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        status.textContent = "Betaling Fullført ✔️ ";
+        status.style.opacity = "1";
+
+        setTimeout(() => {
+          window.location.href = "main.html";
+        }, 3000); 
+      });
+    });
+  </script>
+
+</body>
+</html>

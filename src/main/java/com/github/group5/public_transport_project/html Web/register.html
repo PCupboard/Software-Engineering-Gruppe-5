@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registrer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body class="bg">
+  <header class="bar">
+    <span aria-hidden="true"></span>
+    <button id="langToggle" class="lang" type="button" aria-label="Bytt språk">NO</button>
+  </header>
+
+  <main class="wrap">
+    <h1 class="title">Register Deg Under ✍🏼</h1>
+
+    <section class="glass card">
+      <form class="stack" autocomplete="on">
+        <label id="nameLabel" class="field">
+          <span class="lbl">Navn</span>
+          <input id="name" name="name" class="input" type="text" placeholder="Ola Nordmann" required>
+        </label>
+
+        <label id="emailLabel" class="field">
+          <span class="lbl">E-post</span>
+          <input id="email" name="email" class="input" type="email" inputmode="email" placeholder="E-post@eksempel.com" required>
+        </label>
+
+        <label id="passLabel" class="field">
+          <span class="lbl">Passord</span>
+          <input id="pwd" name="pwd" class="input" type="password" placeholder="••••••••" required>
+        </label>
+        <a href="login.html" class="btn primary"> Register</a>
+       <!-- <button type="button" href="login.html" class="btn primary">Registrer</button>
+      -->
+      </form>
+    </section>
+
+    <section class="social">
+      <p class="muted center">eller registrer med</p>
+      <ul class="social-list" aria-label="Sosial registrering">
+        <li>
+          <button class="chip" type="button" aria-label="Vipps">
+            <span class="vipps">V</span>
+          </button>
+        </li>
+        <li>
+          <button class="chip" type="button" aria-label="Google">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"> <!--Brukte SVG for å enklere sette iconene på plass, kan sette png også, men mp justere og forvente kvalitetstap-->
+              <path fill="#EA4335" d="M12 10.2v3.9h5.5c-.2 1.3-1.6 3.9-5.5 3.9-3.3 0-6-2.7-6-6s2.7-6 6-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.9 3 14.7 2 12 2 6.9 2 2.8 6.1 2.8 11.2S6.9 20.5 12 20.5c6.2 0 8.6-4.3 8.6-6.6 0-.5-.1-.8-.2-1.2H12z"/>
+              <path fill="#34A853" d="M3.9 7.4l3.2 2.3C7.9 8 9.8 6.7 12 6.7c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.9 3 14.7 2 12 2 8.3 2 5.2 4.1 3.9 7.4z"/>
+              <path fill="#4285F4" d="M20.6 13.9c.1-.4.2-.7.2-1.2 0-.4-.1-.8-.2-1.2H12v3.9h8.6z"/>
+              <path fill="#FBBC05" d="M7.1 14.1l-3.2 2.3C5.2 19.7 8.3 21.8 12 21.8c2.6 0 4.8-.9 6.4-2.4l-2.8-2.2c-.8.5-1.9 1-3.6 1-3.9 0-5.3-2.6-5.5-3.9z"/>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button class="chip" type="button" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path fill="#1877F2" d="M22 12a10 10 0 10-11.6 9.9v-7h-2.6V12h2.6V9.7c0-2.6 1.5-4 3.8-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0022 12z"/>
+            </svg>
+          </button>
+        </li>
+      </ul>
+      <p class="center small muted">Har du allerede bruker? <a class="link strong" href="login.html">Logg inn</a></p>
+    </section>
+  </main>
+
+  <script>
+    const langBtn = document.getElementById("langToggle");
+    const htmlEl = document.documentElement;
+
+    const el = {
+      title: document.querySelector(".title"),
+      nameLabel: document.querySelector("#nameLabel .lbl"),
+      emailLabel: document.querySelector("#emailLabel .lbl"),
+      passLabel: document.querySelector("#passLabel .lbl"),
+      name: document.getElementById("name"),
+      email: document.getElementById("email"),
+      pass: document.getElementById("pwd"),
+      submit: document.querySelector(".btn.primary"),
+      socialCaption: document.querySelector(".social .muted"),
+      bottomNote: document.querySelector(".social .center.small")
+    };
+
+    const tr = {
+      NO: {
+        title: "Register Deg Under ✍🏼",
+        name: "Navn", namePh: "Ola Nordmann",
+        email: "E-post", emailPh: "E-post@eksempel.com",
+        pass: "Passord", passPh: "••••••••",
+        submit: "Registrer",
+        socialCaption: "eller registrer med",
+        bottomNote: 'Har du allerede bruker? <a class="link strong" href="#">Logg inn</a>'
+      },
+      EN: {
+        title: "Register Below ✍🏼",
+        name: "Name", namePh: "Will Smith",
+        email: "Email", emailPh: "example@email.com",
+        pass: "Password", passPh: "••••••••",
+        submit: "Register",
+        socialCaption: "or register with",
+        bottomNote: 'Already have an account? <a class="link strong" href="#">Log in</a>'
+      }
+    };
+
+    langBtn.addEventListener("click", () => {
+      const next = langBtn.textContent.trim() === "NO" ? "EN" : "NO";
+      const t = tr[next];
+      langBtn.textContent = next;
+      htmlEl.lang = next.toLowerCase();
+
+      el.title.textContent = t.title;
+      el.nameLabel.textContent = t.name;
+      el.emailLabel.textContent = t.email;
+      el.passLabel.textContent = t.pass;
+      el.name.placeholder = t.namePh;
+      el.email.placeholder = t.emailPh;
+      el.pass.placeholder = t.passPh;
+      el.submit.textContent = t.submit;
+      el.socialCaption.textContent = t.socialCaption;
+      el.bottomNote.innerHTML = t.bottomNote;
+    });
+  </script>
+</body>
+</html>

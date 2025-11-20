@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ruter.css" />
+</head>
+<body class="bg">
+  <header class="bar">
+    <span aria-hidden="true"></span>
+    <button id="langToggle" class="lang" type="button" aria-label="Bytt språk">NO</button>
+  </header>
+
+  <main class="wrap">
+    <h1 class="title"><span class="title-text">Ruter</span></h1>
+
+    <!-- Scrollbar liste av ruter, når vi legger inn flere blir scroll funksjonen tilgjengelig, kan testes av å copy paste 
+     fra <li> til </li> -->
+    <section class="glass card">
+      <h2 class="visually-hidden">Tilgjengelige ruter</h2>
+      <ul class="route-list">
+        <!-- Alle sender til samme side, enkel routeselect bør gjøre det enkelt å bruke forsjellige ruter.-->
+        <li>
+          <a class="route" href="kjop.html" data-route="1">
+            <span class="name">Rute 1</span>
+            <span class="bullet" aria-hidden="true"></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="route" href="kjop.html" data-route="2">
+            <span class="name">Rute 2</span>
+            <span class="bullet" aria-hidden="true"></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="route" href="kjop.html" data-route="3">
+            <span class="name">Rute 3</span>
+            <span class="bullet" aria-hidden="true"></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="route" href="kjop.html" data-route="4">
+            <span class="name">Rute 4</span>
+            <span class="bullet" aria-hidden="true"></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="route" href="kjop.html" data-route="5">
+            <span class="name">Rute 5</span>
+            <span class="bullet" aria-hidden="true"></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <!-- Sett inn flere list tags her for å forlenge listen -->
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const langBtn = document.getElementById("langToggle");
+    const htmlEl  = document.documentElement;
+
+    const el = {
+      title: document.querySelector(".title-text"),
+      names: document.querySelectorAll(".route .name")
+    };
+
+    const tr = {
+      NO: { title: "Ruter", prefix: "Rute" },
+      EN: { title: "Routes", prefix: "Route" }
+    };
+
+    langBtn.addEventListener("click", () => {
+      const next = langBtn.textContent.trim() === "NO" ? "EN" : "NO";
+      const t = tr[next];
+      langBtn.textContent = next; htmlEl.lang = next.toLowerCase();
+
+      el.title.textContent = t.title;
+      el.names.forEach((n, i) => n.textContent = `${t.prefix} ${i+1}`);
+    });
+  </script>
+</body>
+</html>

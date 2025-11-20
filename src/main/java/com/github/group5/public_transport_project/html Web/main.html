@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Din Billett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body class="bg">
+  <header class="bar">
+    <span aria-hidden="true"></span>
+    <button id="langToggle" class="lang" type="button" aria-label="Bytt språk">NO</button>
+  </header>
+
+  <main class="wrap">
+    <h1 class="title"><span class="title-text">Din Billett</span> <span aria-hidden="true">🎟️</span></h1>
+
+    <section class="glass card">
+      <ul class="ticket">
+        <li class="row">
+          <span class="lbl" id="lbl-bus">Buss Nummer</span>
+          <output class="val">33</output>
+        </li>
+        <li class="row">
+          <span class="lbl" id="lbl-arrival">Bussen Er Hos Deg Om</span>
+          <output class="val">5:31</output>
+        </li>
+        <li class="row">
+          <span class="lbl" id="lbl-expires">Billettet Utløper Om</span>
+          <output class="val">43:56</output>
+        </li>
+      </ul>
+    </section>
+
+    <nav class="actions">
+      <a class="btn primary" href="kjop.html" id="btn-buy">Kjøp Billett</a>
+      <a class="btn ghost" href="ruter.html" id="btn-routes">Se Ruter</a>
+    </nav>
+
+    <!-- Kart, brukte Google-maps embed map. 
+         Lokasjonen som er brukt her i addressen til Høyskolen for dummy lokasjon -->
+    <section class="map">
+      <h2 class="visually-hidden">Kart</h2>
+      <!-- For å legge til et annet sted bytt dette under, fiks width og height hvis den ikke 
+       gjør det automatisk :) -->
+      <div class="map-embed glass" style="padding: 0%; overflow: hidden; height: 180px; border-radius: 18px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7964.840056687698!2d11.342525035019602!3d59.12925810402214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464412f0d344246f%3A0x4e47f19c99b253b1!2s%C3%98stfold%20University%20College!5e1!3m2!1sen!2sno!4v1763395916747!5m2!1sen!2sno" 
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const langBtn = document.getElementById("langToggle");
+    const htmlEl  = document.documentElement;
+
+    const el = {
+      title: document.querySelector(".title-text"),
+      lblBus: document.getElementById("lbl-bus"),
+      lblArr: document.getElementById("lbl-arrival"),
+      lblExp: document.getElementById("lbl-expires"),
+      btnBuy: document.getElementById("btn-buy"),
+      btnRoutes: document.getElementById("btn-routes"),
+      mapCap: document.querySelector(".map-cap")
+    };
+
+    const tr = {
+      NO: {
+        title: "Din Billett",
+        bus: "Buss Nummer",
+        arrival: "Tid Før Bussen er Hos Deg",
+        expires: "Billettet Utløper Om",
+        buy: "Kjøp Billett",
+        routes: "Se Ruter",
+        map: "Sett inn Google Maps lokasjon her" //Dette kommer opp hvis du ikke har satt inn google maps lokasjon 
+      },
+      EN: {
+        title: "Your Ticket",
+        bus: "Bus Number",
+        arrival: "Time Until Bus Arrives",
+        expires: "Ticket Expires In",
+        buy: "Buy Ticket",
+        routes: "See Routes",
+        map: "Insert Google Maps location here"
+      }
+    };
+
+    langBtn.addEventListener("click", () => {
+      const next = langBtn.textContent.trim() === "NO" ? "EN" : "NO";
+      const t = tr[next];
+      langBtn.textContent = next; htmlEl.lang = next.toLowerCase();
+
+      el.title.textContent = t.title;
+      el.lblBus.textContent = t.bus;
+      el.lblArr.textContent = t.arrival;
+      el.lblExp.textContent = t.expires;
+      el.btnBuy.textContent = t.buy;
+      el.btnRoutes.textContent = t.routes;
+      el.mapCap.textContent = t.map;
+    });
+  </script>
+</body>
+</html>
